@@ -2,17 +2,16 @@ import React, { DOM, PropTypes } from 'react';
 
 import { Button, Icon } from 'semantic-ui-react';
 
-class Like extends React.Component {
-  render() {
-    const { count, handleLikeClick } = this.props;
-    return React.createElement(
-      LikeItem, { count, handleLikeClick }
-    );
-  }
-}
+const Like = ({ count, handleLikeClick }) => (
+  React.createElement(
+    LikeItem,
+    { count,handleLikeClick }
+  )
+);
 
 Like.propTypes = {
-  count: PropTypes.number
+  count: PropTypes.number,
+  handleLikeClick: PropTypes.func
 };
 
 const LikeItem = (props) => (

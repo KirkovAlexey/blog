@@ -1,4 +1,4 @@
-import React, { DOM } from 'react';
+import React, { DOM, PropTypes } from 'react';
 
 import ReactDOM from 'react-dom';
 
@@ -29,5 +29,9 @@ class PieChart extends React.Component {
     );
   }
 }
+
+PieChart.propTypes = {
+  columns: PropTypes.object
+};
 
 export default PieChart;

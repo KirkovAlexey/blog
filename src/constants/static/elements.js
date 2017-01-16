@@ -16,8 +16,10 @@ export const elements = [
     description: { text: 'Winter is comming, first' },
     meta: {
       author: 'Ivan Petrov',
-      createdAt: moment().subtract(10, 'weeks').calendar(),
-      updatedAt: moment().subtract(8, 'weeks').calendar(),
+      createdAt: moment().subtract(10, 'weeks')
+                         .calendar(),
+      updatedAt: moment().subtract(8, 'weeks')
+                         .calendar(),
       count: 3
     }
   },
@@ -32,8 +34,10 @@ export const elements = [
     description: { text: 'Winter is comming, second' },
     meta: {
       author: 'Peter Petrov',
-      createdAt: moment().subtract(2, 'weeks').calendar(),
-      updatedAt: moment().subtract(2, 'days').calendar(),
+      createdAt: moment().subtract(2, 'weeks')
+                         .calendar(),
+      updatedAt: moment().subtract(2, 'days')
+                         .calendar(),
       count: 7
     }
   },
@@ -53,8 +57,10 @@ export const elements = [
     description: { text: 'Winter is comming, third' },
     meta: {
       author: 'Sidor Petrov',
-      createdAt: moment().subtract(2, 'days').calendar(),
-      updatedAt: moment().subtract(1, 'days').calendar(),
+      createdAt: moment().subtract(2, 'days')
+                         .calendar(),
+      updatedAt: moment().subtract(1, 'days')
+                         .calendar(),
       count: 32
     }
   }
