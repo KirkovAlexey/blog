@@ -14,7 +14,7 @@ const BlogList = ({ elements, handleLikeClick }) => (
           BlogItem,
           Object.assign(
             { key: element.id },
-            element,
+            { element },
             { handleLikeClick: () => handleLikeClick(element.id) }
           )
         )

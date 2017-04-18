@@ -31,7 +31,7 @@ class PieChart extends React.Component {
 }
 
 PieChart.propTypes = {
-  columns: PropTypes.object
+  columns: PropTypes.array
 };
 
 export default PieChart;

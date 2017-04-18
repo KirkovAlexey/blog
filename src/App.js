@@ -1,12 +1,13 @@
 import React from 'react';
+import { Router, browserHistory } from 'react-router';
 
-import MainLayout from 'components/layouts/MainLayout';
-import BlogPage from 'components/BlogPage';
+import routes from 'routes';
 
 const App = () => (
-  <MainLayout>
-    <BlogPage />
-  </MainLayout>
+  React.createElement(
+    Router,
+    { history: browserHistory, routes }
+  )
 );
 
 export default App;

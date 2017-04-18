@@ -4,30 +4,35 @@ import TextBox from './elements/TextBox';
 import Image from './elements/Image';
 import Like from './elements/Like';
 import MetaData from './elements/Meta';
+import Link from 'components/elements/Link';
 
 import moment from 'moment';
 
 import { Container, Divider } from 'semantic-ui-react';
 
-const BlogItem = (props) => (
+const BlogItem = ({ element }) => (
   DOM.div(
     null,
     React.createElement(Container, {},
-      React.createElement(Image, props.image)
+      React.createElement(Image, element.image)
       , React.createElement(
         'p',
         {},
-        React.createElement(TextBox, props.description)
+        React.createElement(
+          Link,
+          { to: `/posts/${element.id}` },
+          React.createElement(TextBox, element.description)
+        )
       )
       , React.createElement(
         Like,
         {
-          count: props.meta.count,
-          handleLikeClick: props.handleLikeClick
+          meta: element.meta,
+          handleLikeClick: element.handleLikeClick
         }
       )
       , DOM.hr(null)
-      , React.createElement(MetaData, props.meta)
+      , React.createElement(MetaData, element.meta)
       , React.createElement(Divider, { horizontal: true })
     )
   )
@@ -41,7 +46,7 @@ BlogItem.propTypes = {
 
 BlogItem.defaultProps = {
   image: {
-    src: 'dist/images/world.png',
+    src: '/dist/images/default.jpg',
     width: 179,
     height: 100,
     alt: 'Here is empty',
