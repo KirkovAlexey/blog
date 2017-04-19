@@ -10,6 +10,8 @@ import moment from 'moment';
 
 import { Container, Divider } from 'semantic-ui-react';
 
+import { postsPath } from 'helpers/routes';
+
 const BlogItem = ({ element }) => (
   DOM.div(
     null,
@@ -20,7 +22,7 @@ const BlogItem = ({ element }) => (
         {},
         React.createElement(
           Link,
-          { to: `/posts/${element.id}` },
+          { to: postsPath(element.id) },
           React.createElement(TextBox, element.description)
         )
       )

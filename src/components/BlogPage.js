@@ -8,6 +8,8 @@ import PieChart from 'components/widgets/blog/PieChart';
 
 import _ from 'lodash';
 
+import { SERVER_API_URL } from 'constants/ServerApiUrl';
+
 class BlogPage extends React.Component {
   constructor(props) {
     super(props);
@@ -21,7 +23,7 @@ class BlogPage extends React.Component {
 
   fetchPosts() {
     request.get(
-      'http://localhost:3001/',
+      `${SERVER_API_URL}`,
       {},
       (err, res) => this.setState({ elements: res.body })
     );

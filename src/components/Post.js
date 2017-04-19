@@ -5,6 +5,8 @@ import { Item } from 'semantic-ui-react';
 
 import BlogItem from 'components/widgets/blog/BlogItem';
 
+import { postsPath } from 'helpers/routes';
+import { SERVER_API_URL } from 'constants/ServerApiUrl';
 
 class Post extends React.Component {
   constructor(props) {
@@ -19,7 +21,7 @@ class Post extends React.Component {
   fetchPost() {
     const { id } = this.props.params;
     request.get(
-      `http://localhost:3001/posts/${id}`,
+      `${SERVER_API_URL}${postsPath(id)}`,
       {},
       (err, res) => this.setState({ element: res.body })
     );
