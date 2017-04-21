@@ -1,12 +1,15 @@
-import React, { DOM } from 'react';
+import React, { PropTypes } from 'react';
 
 import { map } from 'lodash/collection';
 
 import BlogItem from './BlogItem';
 
+import { postsPath } from 'helpers/routes';
+
 const BlogList = ({ elements, handleLikeClick }) => (
-  DOM.div(
-    null,
+  React.createElement(
+    'div',
+    {},
     map(
       elements,
       (element) => (
@@ -14,13 +17,21 @@ const BlogList = ({ elements, handleLikeClick }) => (
           BlogItem,
           Object.assign(
             { key: element.id },
-            element,
-            { handleLikeClick: () => handleLikeClick(element.id) }
+            { element: Object.assign(
+                        element,
+                        { link: postsPath(element.id) }
+                       ) },
+            { handleLikeClick }
           )
         )
       )
     )
   )
 );
+
+BlogList.propTypes = {
+  elements: PropTypes.array,
+  handleLikeClick: PropTypes.func
+};
 
 export default BlogList;

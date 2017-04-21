@@ -2,9 +2,9 @@ import moment from 'moment';
 
 export const elements = [
   {
-    id: 0,
+    id: 1,
     image: {
-      src: 'dist/images/default.jpg',
+      src: '/dist/images/default.jpg',
       width: 160,
       height: 120,
       style: {
@@ -24,9 +24,9 @@ export const elements = [
     }
   },
   {
-    id: 1,
+    id: 2,
     image: {
-      src: 'dist/images/default.jpg',
+      src: '/dist/images/default.jpg',
       width: 160,
       height: 120,
       alt: 'Winter'
@@ -42,9 +42,9 @@ export const elements = [
     }
   },
   {
-    id: 2,
+    id: 3,
     image: {
-      src: 'dist/images/default.jpg',
+      src: '/dist/images/default.jpg',
       width: 160,
       height: 120,
       alt: 'Winter',

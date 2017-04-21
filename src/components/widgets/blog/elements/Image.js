@@ -13,7 +13,7 @@ Image.propTypes = {
 };
 
 Image.defaultProps = {
-  src: 'dist/images/default.jpg',
+  src: '/dist/images/default.jpg',
   width: 160,
   height: 120,
   alt: 'Here is empty',

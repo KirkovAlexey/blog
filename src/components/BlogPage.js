@@ -1,18 +1,32 @@
-import React, { DOM, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
+
+import request from 'superagent';
 
 import BlogList from 'components/widgets/blog/BlogList';
 import BlogItem from 'components/widgets/blog/BlogItem';
 import PieChart from 'components/widgets/blog/PieChart';
 
-import { elements as staticElements } from 'constants/static/elements';
-
 import _ from 'lodash';
+
+import { SERVER_API_URL } from 'constants/ServerApiUrl';
 
 class BlogPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { elements: staticElements };
+    this.state = { elements: [] };
     this.handleLikeClick = _.bind(this.handleLikeClick, this);
+  }
+
+  componentDidMount() {
+    this.fetchPosts();
+  }
+
+  fetchPosts() {
+    request.get(
+      `${SERVER_API_URL}`,
+      {},
+      (err, res) => this.setState({ elements: res.body })
+    );
   }
 
   handleLikeClick(elementId) {
@@ -29,8 +43,9 @@ class BlogPage extends React.Component {
     const { elements } = this.state;
     const columns = _.map(elements, (e) => [e.description.text, e.meta.count]);
     return (
-      DOM.div(
-        null,
+      React.createElement(
+        'div',
+        {},
         React.createElement(
           BlogList, { elements, handleLikeClick: this.handleLikeClick }
         )
