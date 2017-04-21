@@ -1,4 +1,4 @@
-import React, { DOM, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 import request from 'superagent';
 
@@ -43,8 +43,9 @@ class BlogPage extends React.Component {
     const { elements } = this.state;
     const columns = _.map(elements, (e) => [e.description.text, e.meta.count]);
     return (
-      DOM.div(
-        null,
+      React.createElement(
+        'div',
+        {},
         React.createElement(
           BlogList, { elements, handleLikeClick: this.handleLikeClick }
         )

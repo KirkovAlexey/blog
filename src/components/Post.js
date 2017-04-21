@@ -21,7 +21,7 @@ class Post extends React.Component {
   fetchPost() {
     const { id } = this.props.params;
     request.get(
-      `${SERVER_API_URL}${postsPath(id)}`,
+      `${SERVER_API_URL}/posts/${id}`,
       {},
       (err, res) => this.setState({ element: res.body })
     );
@@ -29,6 +29,8 @@ class Post extends React.Component {
 
   render() {
     const { element } = this.state;
+    if (element)
+      element.link = postsPath(element.id);
     return  React.createElement(
       Item.Group,
       {},

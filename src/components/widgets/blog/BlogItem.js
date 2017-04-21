@@ -10,9 +10,7 @@ import moment from 'moment';
 
 import { Container, Divider } from 'semantic-ui-react';
 
-import { postsPath } from 'helpers/routes';
-
-const BlogItem = ({ element }) => (
+const BlogItem = ({ element, handleLikeClick }) => (
   DOM.div(
     null,
     React.createElement(Container, {},
@@ -22,18 +20,19 @@ const BlogItem = ({ element }) => (
         {},
         React.createElement(
           Link,
-          { to: postsPath(element.id) },
+          { to: element.link },
           React.createElement(TextBox, element.description)
         )
       )
-      , React.createElement(
+      , handleLikeClick && React.createElement(
         Like,
         {
           meta: element.meta,
-          handleLikeClick: element.handleLikeClick
+          id: element.id,
+          handleLikeClick
         }
       )
-      , DOM.hr(null)
+      , React.createElement('hr', {})
       , React.createElement(MetaData, element.meta)
       , React.createElement(Divider, { horizontal: true })
     )

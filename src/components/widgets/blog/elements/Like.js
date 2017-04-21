@@ -1,17 +1,29 @@
 import React, { DOM, PropTypes } from 'react';
-
+import { bind } from 'lodash';
 import { Button, Icon } from 'semantic-ui-react';
 
-const Like = ({ meta, handleLikeClick }) => (
-  React.createElement(
-    LikeItem,
-    { meta, handleLikeClick }
-  )
-);
+class Like extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleLikeClick = bind(this.handleLikeClick, this);
+  }
+
+  handleLikeClick() {
+    return this.props.handleLikeClick(this.props.id);
+  }
+
+  render() {
+    return React.createElement(
+      LikeItem,
+      { meta: this.props.meta, handleLikeClick: this.handleLikeClick }
+    );
+  }
+}
 
 Like.propTypes = {
   meta: PropTypes.object,
-  handleLikeClick: PropTypes.func
+  handleLikeClick: PropTypes.func,
+  id: PropTypes.number
 };
 
 const LikeItem = ({ meta, handleLikeClick }) => (
