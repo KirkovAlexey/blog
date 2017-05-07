@@ -5,8 +5,6 @@ import { map } from 'lodash/collection';
 import BlogItem from './BlogItem';
 import PieChart from './PieChart';
 
-import { postsPath } from 'helpers/routes';
-
 const BlogList = ({ elements, handleLikeClick }) => (
   React.createElement(
     'div',
@@ -21,10 +19,7 @@ const BlogList = ({ elements, handleLikeClick }) => (
             BlogItem,
             Object.assign(
               { key: element.id },
-              { element: Object.assign(
-                          element,
-                          { link: postsPath(element.id) }
-                         ) },
+              { element },
               { handleLikeClick }
             )
           )
