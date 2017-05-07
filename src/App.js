@@ -15,9 +15,11 @@ function historyCb(location) {
       prepareData(store, state);
     }
   });
+
+  return true;
 }
 
-browserHistory.listenBefore(historyCb(location));
+browserHistory.listenBefore(historyCb);
 
 historyCb(window.location);
 

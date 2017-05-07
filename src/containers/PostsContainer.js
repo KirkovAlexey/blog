@@ -8,4 +8,4 @@ const stateToProps = (state) => ({
   error: state.posts.error
 });
 
-connect(stateToProps)(BlogList);
+export default connect(stateToProps)(BlogList);

@@ -21,7 +21,6 @@ const receivePost = (response) => ({
 export function fetchPost(id) {
   return (dispatch) => {
     dispatch(requestPost(id));
-
     return request
       .get(`${SERVER_API_URL}/posts/${id}`)
       .end((err, response) => {
