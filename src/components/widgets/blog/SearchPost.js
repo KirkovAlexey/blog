@@ -1,11 +1,11 @@
-import React, { DOM, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 import InputField from './elements/InputField';
 
 import { Grid } from 'semantic-ui-react';
 
 
-const SearchPost = () => (
+const SearchPost = ({ handleInputField }) => (
   React.createElement(
     Grid,
     { },
@@ -17,11 +17,15 @@ const SearchPost = () => (
         { width: 12 },
         React.createElement(
           InputField,
-          {}
+          { placeholder: 'Search posts...', handleInputField }
         )
       )
     )
   )
 );
+
+SearchPost.propTypes = {
+  handleInputField: PropTypes.func.isRequired
+};
 
 export default SearchPost;

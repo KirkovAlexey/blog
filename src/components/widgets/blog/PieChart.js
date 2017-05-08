@@ -8,13 +8,7 @@ import c3 from 'c3';
 
 class PieChart extends React.Component {
   componentDidMount() {
-    this.chart = c3.generate({
-      bindto: ReactDOM.findDOMNode(this.refs.chart),
-      data: {
-        type: 'pie',
-        columns: this.props.columns
-      }
-    });
+    this.processChart();
   }
 
   componentWillUnmount() {
@@ -23,6 +17,20 @@ class PieChart extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     this.chart.load(nextProps);
+  }
+
+  componentDidUpdate() {
+    this.processChart();
+  }
+
+  processChart() {
+    this.chart = c3.generate({
+      bindto: ReactDOM.findDOMNode(this.refs.chart),
+      data: {
+        type: 'pie',
+        columns: this.props.columns
+      }
+    });
   }
 
   render() {

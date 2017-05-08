@@ -3,7 +3,7 @@ import MainLayout from 'components/layouts/MainLayout';
 import PostsContainer from 'containers/PostsContainer';
 import PostContainer from 'containers/PostContainer';
 
-import { fetchPosts } from 'actions/Posts';
+import { fetchPosts, searchPosts } from 'actions/Posts';
 import { fetchPost } from 'actions/Post';
 
 import { postsPath } from 'helpers/routes';
@@ -24,10 +24,19 @@ const PostRoute = {
   }
 };
 
+const SearchRoute = {
+  path: '/result',
+  component: PostsContainer,
+  prepareData: (store, query) => {
+    store.dispatch(searchPosts(query.q));
+  }
+};
+
 export default {
   component: MainLayout,
   childRoutes: [
     Index,
-    PostRoute
+    PostRoute,
+    SearchRoute
   ]
 };

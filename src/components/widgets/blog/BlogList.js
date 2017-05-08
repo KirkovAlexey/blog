@@ -6,13 +6,13 @@ import BlogItem from './BlogItem';
 import PieChart from './PieChart';
 import SearchPost from './SearchPost';
 
-const BlogList = ({ elements, handleLikeClick }) => (
+const BlogList = ({ elements, handleInputField }) => (
   React.createElement(
     'div',
     {},
     React.createElement(
       SearchPost,
-      {}
+      { handleInputField }
     ),
     React.createElement(
       'div',
@@ -24,8 +24,7 @@ const BlogList = ({ elements, handleLikeClick }) => (
             BlogItem,
             Object.assign(
               { key: element.id },
-              { element },
-              { handleLikeClick }
+              { element }
             )
           )
         )
@@ -42,7 +41,7 @@ const BlogList = ({ elements, handleLikeClick }) => (
 
 BlogList.propTypes = {
   elements: PropTypes.array,
-  handleLikeClick: PropTypes.func
+  handleInputField: PropTypes.func
 };
 
 export default BlogList;
