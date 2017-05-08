@@ -4,11 +4,16 @@ import { map } from 'lodash/collection';
 
 import BlogItem from './BlogItem';
 import PieChart from './PieChart';
+import SearchPost from './SearchPost';
 
 const BlogList = ({ elements, handleLikeClick }) => (
   React.createElement(
     'div',
     {},
+    React.createElement(
+      SearchPost,
+      {}
+    ),
     React.createElement(
       'div',
       {},
@@ -28,7 +33,9 @@ const BlogList = ({ elements, handleLikeClick }) => (
     ),
     React.createElement(
       PieChart,
-      { columns: map(elements, (element) => ([element.description.text, element.meta.count])) }
+      { columns: map(
+        elements, (element) => ([element.description.text, element.meta.count])
+      ) }
     )
   )
 );

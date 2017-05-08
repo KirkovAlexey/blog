@@ -1,6 +1,8 @@
-import React, { DOM, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 import ReactDOM from 'react-dom';
+
+import { Grid } from 'semantic-ui-react';
 
 import c3 from 'c3';
 
@@ -25,7 +27,22 @@ class PieChart extends React.Component {
 
   render() {
     return (
-      DOM.div({ ref: 'chart'})
+      React.createElement(
+        Grid,
+        {},
+        React.createElement(
+          Grid.Row,
+          {},
+          React.createElement(
+            Grid.Column,
+            { width: 12 },
+             React.createElement(
+               'div',
+               { ref: 'chart' }
+             )
+          )
+        )
+      )
     );
   }
 }
