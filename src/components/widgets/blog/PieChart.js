@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 
 import { Grid } from 'semantic-ui-react';
 
-import c3 from 'c3';
+// import c3 from 'c3';
 
 class PieChart extends React.Component {
   componentDidMount() {
@@ -24,13 +24,18 @@ class PieChart extends React.Component {
   }
 
   processChart() {
-    this.chart = c3.generate({
-      bindto: ReactDOM.findDOMNode(this.refs.chart),
-      data: {
-        type: 'pie',
-        columns: this.props.columns
-      }
-    });
+    let bindto;
+    if (window === undefined)
+      bindto = '<div></div>';
+    else
+      bindto = ReactDOM.findDOMNode(this.refs.chart);
+    // this.chart = c3.generate({
+    //   bindto,
+    //   data: {
+    //     type: 'pie',
+    //     columns: this.props.columns
+    //   }
+    // });
   }
 
   render() {

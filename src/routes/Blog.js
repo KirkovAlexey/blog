@@ -12,7 +12,7 @@ const Index = {
   path: '/',
   component: PostsContainer,
   prepareData: (store) => {
-    store.dispatch(fetchPosts());
+    return store.dispatch(fetchPosts());
   }
 };
 
@@ -20,7 +20,7 @@ const PostRoute = {
   path: postsPath(),
   component: PostContainer,
   prepareData: (store, query, params) => {
-    store.dispatch(fetchPost(params.id));
+    return store.dispatch(fetchPost(params.id));
   }
 };
 
@@ -28,7 +28,7 @@ const SearchRoute = {
   path: '/result',
   component: PostsContainer,
   prepareData: (store, query) => {
-    store.dispatch(fetchPosts(query.q));
+    return store.dispatch(fetchPosts(query.q));
   }
 };
 
