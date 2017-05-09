@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react';
 
 import { Container } from 'semantic-ui-react';
 
-import Link from 'components/elements/Link';
 import GoBackButton from 'components/elements/GoBackButton';
 
 import Logo from 'components/layouts/Logo';
@@ -14,9 +13,8 @@ const MainLayout = ({ children }) => (
     Container,
     {},
     React.createElement(
-      Link,
-      { to: '/' },
-      React.createElement(Logo)
+      Logo,
+      { }
     ),
     React.createElement(GoBackButton),
     children,

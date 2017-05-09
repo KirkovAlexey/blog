@@ -8,34 +8,45 @@ import Link from 'components/elements/Link';
 
 import moment from 'moment';
 
-import { Container, Divider } from 'semantic-ui-react';
+import { Divider, Grid } from 'semantic-ui-react';
 
 const BlogItem = ({ element, handleLikeClick }) => (
-  DOM.div(
-    null,
-    React.createElement(Container, {},
-      React.createElement(Image, element.image)
-      , React.createElement(
-        'p',
-        {},
+  React.createElement(
+    Grid,
+    {},
+    React.createElement(
+      Grid.Row,
+      {},
+      React.createElement(
+        Grid.Column,
+        { width: 3 },
+        React.createElement(Image, element.image)
+      ),
+      React.createElement(
+        Grid.Column,
+        { width: 8 },
         React.createElement(
-          Link,
-          { to: element.link },
-          React.createElement(TextBox, element.description)
-        )
+          'p',
+          {},
+          React.createElement(
+            Link,
+            { to: element.link },
+            React.createElement(TextBox, element.description)
+          )
+        ),
+        handleLikeClick && React.createElement(
+          Like,
+          {
+            meta: element.meta,
+            id: element.id,
+            handleLikeClick
+          }
+        ),
+        React.createElement('hr', {}),
+        React.createElement(MetaData, element.meta)
       )
-      , handleLikeClick && React.createElement(
-        Like,
-        {
-          meta: element.meta,
-          id: element.id,
-          handleLikeClick
-        }
-      )
-      , React.createElement('hr', {})
-      , React.createElement(MetaData, element.meta)
-      , React.createElement(Divider, { horizontal: true })
-    )
+    ),
+    React.createElement(Divider, { horizontal: true })
   )
 );
 

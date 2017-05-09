@@ -1,4 +1,7 @@
 import React from 'react';
+
+import Link from 'components/elements/Link';
+
 import { Segment, Header } from 'semantic-ui-react';
 
 const Logo = () => (
@@ -8,7 +11,11 @@ const Logo = () => (
     React.createElement(
       Header,
       {},
-      'Thinknetica Blog'
+      React.createElement(
+        Link,
+        { to: '/' },
+        'Thinknetica Blog'
+      )
     )
   )
 );

@@ -1,18 +1,14 @@
-import React, { DOM, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 import ReactDOM from 'react-dom';
+
+import { Grid } from 'semantic-ui-react';
 
 import c3 from 'c3';
 
 class PieChart extends React.Component {
   componentDidMount() {
-    this.chart = c3.generate({
-      bindto: ReactDOM.findDOMNode(this.refs.chart),
-      data: {
-        type: 'pie',
-        columns: this.props.columns
-      }
-    });
+    this.processChart();
   }
 
   componentWillUnmount() {
@@ -23,9 +19,38 @@ class PieChart extends React.Component {
     this.chart.load(nextProps);
   }
 
+  componentDidUpdate() {
+    this.processChart();
+  }
+
+  processChart() {
+    this.chart = c3.generate({
+      bindto: ReactDOM.findDOMNode(this.refs.chart),
+      data: {
+        type: 'pie',
+        columns: this.props.columns
+      }
+    });
+  }
+
   render() {
     return (
-      DOM.div({ ref: 'chart'})
+      React.createElement(
+        Grid,
+        {},
+        React.createElement(
+          Grid.Row,
+          {},
+          React.createElement(
+            Grid.Column,
+            { width: 12 },
+             React.createElement(
+               'div',
+               { ref: 'chart' }
+             )
+          )
+        )
+      )
     );
   }
 }

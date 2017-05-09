@@ -24,10 +24,19 @@ const PostRoute = {
   }
 };
 
+const SearchRoute = {
+  path: '/result',
+  component: PostsContainer,
+  prepareData: (store, query) => {
+    store.dispatch(fetchPosts(query.q));
+  }
+};
+
 export default {
   component: MainLayout,
   childRoutes: [
     Index,
-    PostRoute
+    PostRoute,
+    SearchRoute
   ]
 };
