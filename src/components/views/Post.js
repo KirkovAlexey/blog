@@ -16,7 +16,11 @@ const Post = ({ element }) => (
     element && React.createElement(
       Helmet,
       {
-        title: element.description.text
+        title: element.description.text,
+        meta: [
+          { name: 'description', content: 'Вывод блога' },
+          { name: 'keywords', content: 'react, blog, main page' }
+        ]
       }
     )
   )

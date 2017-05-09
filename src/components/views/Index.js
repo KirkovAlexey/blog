@@ -15,7 +15,11 @@ const Index = ({ elements, handleInputField }) => (
     React.createElement(
       Helmet,
       {
-        title: 'Список постов'
+        title: 'Список постов',
+        meta: [
+          { name: 'description', content: 'Главная страница' },
+          { name: 'keywords', content: 'react, blog, main page' }
+        ]
       }
     )
   )
