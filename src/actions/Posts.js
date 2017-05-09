@@ -16,18 +16,3 @@ export function fetchPosts(q) {
     }
   };
 }
-
-// export function searchPosts(q) {
-//   return {
-//     [API_CALL]: {
-//       endpoint: '/',
-//       method: 'GET',
-//       query: { q },
-//       types: [
-//         types.FETCH_POSTS_REQUEST,
-//         types.FETCH_POSTS_SUCCESS,
-//         types.FETCH_POSTS_ERROR
-//       ]
-//     }
-//   };
-// }
