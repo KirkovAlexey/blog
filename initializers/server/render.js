@@ -3,9 +3,11 @@ import ReactDOMServer from 'react-dom/server';
 import { Provider } from 'react-redux';
 import { match, RouterContext } from 'react-router';
 import { compact } from 'lodash/array';
-import store from 'store';
+import createStore from 'store';
 import routes from 'routes';
 import prepareData from 'helpers/prepareData';
+
+const store = createStore();
 
 export default (req, res) => {
   match({ routes, location: req.url }, (error, redirectLocation, renderProps) =>

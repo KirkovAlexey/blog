@@ -1,5 +1,7 @@
 import MainLayout from 'components/layouts/MainLayout';
 
+import initialLoad from 'helpers/initialLoad';
+
 import PostsContainer from 'containers/PostsContainer';
 import PostContainer from 'containers/PostContainer';
 
@@ -12,6 +14,7 @@ const Index = {
   path: '/',
   component: PostsContainer,
   prepareData: (store) => {
+    if (initialLoad()) return;
     return store.dispatch(fetchPosts());
   }
 };
