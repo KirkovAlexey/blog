@@ -4,23 +4,27 @@ import ReactDOM from 'react-dom';
 
 import { Grid } from 'semantic-ui-react';
 
-import c3 from 'c3';
+const c3 = __CLIENT__ ? require('c3') : undefined;
 
 class PieChart extends React.Component {
   componentDidMount() {
-    this.processChart();
+    if (__CLIENT__)
+      this.processChart();
   }
 
   componentWillUnmount() {
-    this.chart.destroy();
+    if (__CLIENT__)
+      this.chart.destroy();
   }
 
   componentWillReceiveProps(nextProps) {
-    this.chart.load(nextProps);
+    if (__CLIENT__)
+      this.chart.load(nextProps);
   }
 
   componentDidUpdate() {
-    this.processChart();
+    if (__CLIENT__)
+      this.processChart();
   }
 
   processChart() {

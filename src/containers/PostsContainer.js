@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import BlogList from 'components/widgets/blog/BlogList';
+import Index from 'components/views/Index';
 
 import { map } from 'lodash/collection';
 
@@ -18,4 +18,4 @@ const stateToProps = (state) => ({
   }
 });
 
-export default connect(stateToProps)(BlogList);
+export default connect(stateToProps)(Index);

@@ -29,8 +29,8 @@ const BlogList = ({ elements, handleInputField }) => (
           )
         )
       )
-    ),
-    React.createElement(
+    )
+    , React.createElement(
       PieChart,
       { columns: map(
         elements, (element) => ([element.description.text, element.meta.count])
