@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Link from 'components/elements/Link';
+import { contactsPath } from 'helpers/routes';
 
 import { Segment, Header, Menu } from 'semantic-ui-react';
 
@@ -24,7 +25,7 @@ const Logo = () => (
           {},
           React.createElement(
             Link,
-            { to: '/contacts' },
+            { to: contactsPath() },
             'Contacts'
           )
         )
