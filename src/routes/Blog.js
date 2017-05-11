@@ -5,11 +5,13 @@ import initialLoad from 'helpers/initialLoad';
 import PostsContainer from 'containers/PostsContainer';
 import PostContainer from 'containers/PostContainer';
 import ContactsContainer from 'containers/ContactsContainer';
+import EditPostContainer from 'containers/EditPostContainer';
+import NewPostContainer from 'containers/NewPostContainer';
 
 import { fetchPosts } from 'actions/Posts';
 import { fetchPost } from 'actions/Post';
 
-import { postsPath, contactsPath } from 'helpers/routes';
+import { postsPath, contactsPath, postsEditPath, postsNewPath } from 'helpers/routes';
 
 const Index = {
   path: '/',
@@ -24,7 +26,26 @@ const PostRoute = {
   path: postsPath(),
   component: PostContainer,
   prepareData: (store, query, params) => {
+    if (initialLoad()) return;
     return store.dispatch(fetchPost(params.id));
+  }
+};
+
+const EditPostRoute = {
+  path: postsEditPath(),
+  component: EditPostContainer,
+  prepareData: (store, query, params) => {
+    if (initialLoad()) return;
+    return store.dispatch(fetchPost(params.id));
+  }
+};
+
+const CreatePostRoute = {
+  path: postsNewPath(),
+  component: NewPostContainer,
+  prepareData: (store) => {
+    if (initialLoad()) return;
+    return store.dispatch(NewPostContainer());
   }
 };
 
@@ -32,6 +53,7 @@ const SearchRoute = {
   path: '/result',
   component: PostsContainer,
   prepareData: (store, query) => {
+    if (initialLoad()) return;
     return store.dispatch(fetchPosts(query.q));
   }
 };
@@ -46,6 +68,8 @@ export default {
   childRoutes: [
     Index,
     PostRoute,
+    EditPostRoute,
+    CreatePostRoute,
     SearchRoute,
     ContactsRoute
   ]
