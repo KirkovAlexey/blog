@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Link from 'components/elements/Link';
-import Contacts from 'containers/ContactsContainer';
 
 import { Segment, Header, Menu } from 'semantic-ui-react';
 
