@@ -9,7 +9,7 @@ import EditPostContainer from 'containers/EditPostContainer';
 import NewPostContainer from 'containers/NewPostContainer';
 
 import { fetchPosts } from 'actions/Posts';
-import { fetchPost } from 'actions/Post';
+import { fetchPost, newPost } from 'actions/Post';
 
 import { postsPath, contactsPath, postsEditPath, postsNewPath } from 'helpers/routes';
 
@@ -45,7 +45,7 @@ const CreatePostRoute = {
   component: NewPostContainer,
   prepareData: (store) => {
     if (initialLoad()) return;
-    return store.dispatch(NewPostContainer());
+    return store.dispatch(newPost());
   }
 };
 

@@ -16,3 +16,9 @@ export function fetchPost(id) {
     }
   };
 }
+
+export function newPost() {
+  return {
+    type: types.NEW_POST
+  };
+}

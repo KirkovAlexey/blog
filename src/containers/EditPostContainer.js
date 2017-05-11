@@ -2,10 +2,7 @@ import { connect } from 'react-redux';
 import { reduxForm, SubmissionError } from 'redux-form';
 
 import PostEdit from 'components/views/PostEdit';
-
-const sleep = (milliseconds) => {
-  return new Promise((resolve) => setTimeout(resolve, milliseconds));
-};
+import sleep from 'helpers/sleep';
 
 const submit = (values) => {
   return sleep(1000).then(() => {
@@ -21,13 +18,9 @@ export default connect(
     initialValues: {
       title: state.post.entry.description.text,
       createdAt: state.post.entry.meta.createdAt,
-      author: state.post.entry.meta.author,
-      id: state.post.entry.id
+      author: state.post.entry.meta.author
     }
   })
-  // ,(dispath) => ({
-  //   updatePost: flowRight(dispath, updatePost)
-  // })
 )(reduxForm({
   form: 'editPost',
   onSubmit: submit

@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import PostForm from './PostForm';
 
 const PostNew = ({ handleSubmit, pristine, submitting, reset }) => (
@@ -8,7 +8,7 @@ const PostNew = ({ handleSubmit, pristine, submitting, reset }) => (
     React.createElement(
       'h1',
       {},
-      'Edit Post'
+      'New Post'
     ),
     React.createElement(
       PostForm,
@@ -16,12 +16,5 @@ const PostNew = ({ handleSubmit, pristine, submitting, reset }) => (
     )
   )
 );
-
-PostNew.propTypes = {
-  handleSubmit: PropTypes.func,
-  pristine: PropTypes.func,
-  submitting: PropTypes.func,
-  reset: PropTypes.func
-};
 
 export default PostNew;

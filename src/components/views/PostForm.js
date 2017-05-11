@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import PostFormField from 'components/widgets/blog/elements/PostFormField';
 import { Field } from 'redux-form';
 
@@ -50,12 +50,5 @@ const PostForm = ({ handleSubmit, pristine, submitting, reset }) => (
     )
   )
 );
-
-PostForm.propTypes = {
-  handleSubmit: PropTypes.func,
-  pristine: PropTypes.func,
-  submitting: PropTypes.func,
-  reset: PropTypes.func
-};
 
 export default PostForm;

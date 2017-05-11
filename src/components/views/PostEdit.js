@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import PostForm from './PostForm';
 
 const PostEdit = ({ handleSubmit, pristine, submitting, reset }) => (
@@ -16,12 +16,5 @@ const PostEdit = ({ handleSubmit, pristine, submitting, reset }) => (
     )
   )
 );
-
-PostEdit.propTypes = {
-  handleSubmit: PropTypes.func,
-  pristine: PropTypes.func,
-  submitting: PropTypes.func,
-  reset: PropTypes.func
-};
 
 export default PostEdit;
