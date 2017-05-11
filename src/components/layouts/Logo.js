@@ -1,8 +1,9 @@
 import React from 'react';
 
 import Link from 'components/elements/Link';
+import Contacts from 'containers/ContactsContainer';
 
-import { Segment, Header } from 'semantic-ui-react';
+import { Segment, Header, Menu } from 'semantic-ui-react';
 
 const Logo = () => (
   React.createElement(
@@ -15,6 +16,19 @@ const Logo = () => (
         Link,
         { to: '/' },
         'Thinknetica Blog'
+      ),
+      React.createElement(
+        Menu,
+        { size: 'mini' },
+        React.createElement(
+          Menu.Item,
+          {},
+          React.createElement(
+            Link,
+            { to: '/contacts' },
+            'Contacts'
+          )
+        )
       )
     )
   )

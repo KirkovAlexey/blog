@@ -4,11 +4,12 @@ import initialLoad from 'helpers/initialLoad';
 
 import PostsContainer from 'containers/PostsContainer';
 import PostContainer from 'containers/PostContainer';
+import ContactsContainer from 'containers/ContactsContainer';
 
 import { fetchPosts } from 'actions/Posts';
 import { fetchPost } from 'actions/Post';
 
-import { postsPath } from 'helpers/routes';
+import { postsPath, contactsPath } from 'helpers/routes';
 
 const Index = {
   path: '/',
@@ -35,11 +36,17 @@ const SearchRoute = {
   }
 };
 
+const ContactsRoute = {
+  path: contactsPath(),
+  component: ContactsContainer
+};
+
 export default {
   component: MainLayout,
   childRoutes: [
     Index,
     PostRoute,
-    SearchRoute
+    SearchRoute,
+    ContactsRoute
   ]
 };
