@@ -4,6 +4,7 @@ import TextBox from './elements/TextBox';
 import Image from './elements/Image';
 import Like from './elements/Like';
 import MetaData from './elements/Meta';
+import ButtonEditPost from './elements/ButtonEditPost';
 import Link from 'components/elements/Link';
 
 import moment from 'moment';
@@ -34,6 +35,10 @@ const BlogItem = ({ element, handleLikeClick }) => (
             React.createElement(TextBox, element.description)
           )
         ),
+        React.createElement(
+          ButtonEditPost,
+          { id: element.id }
+        ),
         handleLikeClick && React.createElement(
           Like,
           {
@@ -53,7 +58,9 @@ const BlogItem = ({ element, handleLikeClick }) => (
 BlogItem.propTypes = {
   image: PropTypes.shape(Image.propTypes),
   description: PropTypes.objectOf(PropTypes.string),
-  meta: PropTypes.shape(MetaData.propTypes)
+  meta: PropTypes.shape(MetaData.propTypes),
+  element: PropTypes.object,
+  handleLikeClick: PropTypes.func
 };
 
 BlogItem.defaultProps = {

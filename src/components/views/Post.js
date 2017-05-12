@@ -28,7 +28,6 @@ const Post = ({ element }) => (
 
 Post.propTypes = {
   element: PropTypes.object
-
 };
 
 export default Post;
