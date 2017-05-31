@@ -1,6 +1,6 @@
 var path = require('path');
 
-require('app-module-app').addPath(path.join(process.cwd(), 'src'));
+require('app-module-path').addPath(path.join(process.cwd(), 'src'));
 
 switch (process.env.TARGET) {
   case 'staging':

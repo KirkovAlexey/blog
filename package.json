@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --config jest.config.json",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "start-dev": "node ./initializers/server/index.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "app-module-path": "^2.2.0",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.21.0",
     "babel-jest": "^20.0.1",
@@ -28,7 +30,9 @@
     "file-loader": "^0.9.0",
     "jest": "^20.0.1",
     "nightmare": "^2.10.0",
+    "prop-types": "^15.5.10",
     "qs": "^6.4.0",
+    "react-addons-test-utils": "^15.5.1",
     "react-hot-loader": "^3.0.0-beta.6",
     "react-test-renderer": "^15.5.4",
     "redux-devtools": "^3.4.0",

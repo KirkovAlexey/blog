@@ -1,4 +1,5 @@
-import React, { DOM, PropTypes } from 'react';
+import React, { DOM } from 'react';
+import PropTypes from 'prop-types';
 
 import TextBox from './elements/TextBox';
 import Image from './elements/Image';
@@ -18,11 +19,11 @@ const BlogItem = ({ element, handleLikeClick }) => (
     React.createElement(
       Grid.Row,
       {},
-      React.createElement(
-        Grid.Column,
-        { width: 3 },
-        React.createElement(Image, element.image)
-      ),
+      // React.createElement(
+      //   Grid.Column,
+      //   { width: 3 },
+      //   React.createElement(Image, element.image)
+      // ),
       React.createElement(
         Grid.Column,
         { width: 8 },
@@ -32,7 +33,7 @@ const BlogItem = ({ element, handleLikeClick }) => (
           React.createElement(
             Link,
             { to: element.link },
-            React.createElement(TextBox, element.description)
+            element.description.text
           )
         ),
         React.createElement(
@@ -56,33 +57,15 @@ const BlogItem = ({ element, handleLikeClick }) => (
 );
 
 BlogItem.propTypes = {
-  image: PropTypes.shape(Image.propTypes),
-  description: PropTypes.objectOf(PropTypes.string),
-  meta: PropTypes.shape(MetaData.propTypes),
   element: PropTypes.object,
   handleLikeClick: PropTypes.func
 };
 
 BlogItem.defaultProps = {
-  image: {
-    src: '/dist/images/default.jpg',
-    width: 179,
-    height: 100,
-    alt: 'Here is empty',
-    style: {
-      padding: '5px',
-      margin: '5px',
-      border: '1px solid red'
+  element: {
+    description: {
+      text: PropTypes.string
     }
-  },
-  description: {
-    text: 'Nothing else'
-  },
-  meta: {
-    author: 'unknown autor',
-    createdAt: moment().calendar(),
-    updatedAt: moment().calendar(),
-    count: 0
   }
 };
 
