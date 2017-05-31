@@ -19,11 +19,11 @@ const BlogItem = ({ element, handleLikeClick }) => (
     React.createElement(
       Grid.Row,
       {},
-      // React.createElement(
-      //   Grid.Column,
-      //   { width: 3 },
-      //   React.createElement(Image, element.image)
-      // ),
+      React.createElement(
+        Grid.Column,
+        { width: 3 },
+        React.createElement(Image, element.image)
+      ),
       React.createElement(
         Grid.Column,
         { width: 8 },
