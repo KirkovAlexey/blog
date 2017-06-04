@@ -11,6 +11,23 @@ ShallowWrapper {
   "node": <Grid>
     <GridRow>
         <GridColumn
+            width={3}
+        >
+            <Image
+                alt="Hello, World"
+                height={120}
+                src="/dist/images/default.jpg"
+                style={
+                    Object {
+                        "border": "1px solid red",
+                        "margin": "5px",
+                        "padding": "5px",
+                      }
+                }
+                width={160}
+            />
+        </GridColumn>
+        <GridColumn
             width={8}
         >
             <p>
@@ -28,8 +45,8 @@ ShallowWrapper {
             <hr />
             <MetaData
                 author="Lost autor"
-                createdAt="Today at 4:59 PM"
-                updatedAt="Today at 4:59 PM"
+                createdAt="Today at 5:51 PM"
+                updatedAt="Today at 5:51 PM"
             />
         </GridColumn>
     </GridRow>
@@ -40,6 +57,23 @@ ShallowWrapper {
   "nodes": Array [
     <Grid>
       <GridRow>
+            <GridColumn
+                  width={3}
+            >
+                  <Image
+                        alt="Hello, World"
+                        height={120}
+                        src="/dist/images/default.jpg"
+                        style={
+                              Object {
+                                    "border": "1px solid red",
+                                    "margin": "5px",
+                                    "padding": "5px",
+                                  }
+                        }
+                        width={160}
+                  />
+            </GridColumn>
             <GridColumn
                   width={8}
             >
@@ -58,8 +92,8 @@ ShallowWrapper {
                   <hr />
                   <MetaData
                         author="Lost autor"
-                        createdAt="Today at 4:59 PM"
-                        updatedAt="Today at 4:59 PM"
+                        createdAt="Today at 5:51 PM"
+                        updatedAt="Today at 5:51 PM"
                   />
             </GridColumn>
       </GridRow>
@@ -88,7 +122,7 @@ ShallowWrapper {
                       }
         }
 />,
-      "_debugID": 30,
+      "_debugID": 34,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": StatelessComponent {
@@ -129,35 +163,22 @@ ShallowWrapper {
         "_currentElement": <Grid>
           <GridRow>
                     <GridColumn
-                              width={8}
+                              width={3}
                     >
-                              <p>
-                                        <Link
-                                                  onlyActiveOnIndex={false}
-                                                  style={Object {}}
-                                                  to="/posts/5"
-                                        >
-                                                  Hello, world!
-                                        </Link>
-                              </p>
-                              <ButtonEditPost
-                                        id={undefined}
-                              />
-                              <hr />
-                              <MetaData
-                                        author="Lost autor"
-                                        createdAt="Today at 4:59 PM"
-                                        updatedAt="Today at 4:59 PM"
+                              <Image
+                                        alt="Hello, World"
+                                        height={120}
+                                        src="/dist/images/default.jpg"
+                                        style={
+                                                  Object {
+                                                            "border": "1px solid red",
+                                                            "margin": "5px",
+                                                            "padding": "5px",
+                                                          }
+                                        }
+                                        width={160}
                               />
                     </GridColumn>
-          </GridRow>
-          <Divider
-                    horizontal={true}
-          />
-</Grid>,
-        "_debugID": 31,
-        "_renderedOutput": <Grid>
-          <GridRow>
                     <GridColumn
                               width={8}
                     >
@@ -176,8 +197,55 @@ ShallowWrapper {
                               <hr />
                               <MetaData
                                         author="Lost autor"
-                                        createdAt="Today at 4:59 PM"
-                                        updatedAt="Today at 4:59 PM"
+                                        createdAt="Today at 5:51 PM"
+                                        updatedAt="Today at 5:51 PM"
+                              />
+                    </GridColumn>
+          </GridRow>
+          <Divider
+                    horizontal={true}
+          />
+</Grid>,
+        "_debugID": 35,
+        "_renderedOutput": <Grid>
+          <GridRow>
+                    <GridColumn
+                              width={3}
+                    >
+                              <Image
+                                        alt="Hello, World"
+                                        height={120}
+                                        src="/dist/images/default.jpg"
+                                        style={
+                                                  Object {
+                                                            "border": "1px solid red",
+                                                            "margin": "5px",
+                                                            "padding": "5px",
+                                                          }
+                                        }
+                                        width={160}
+                              />
+                    </GridColumn>
+                    <GridColumn
+                              width={8}
+                    >
+                              <p>
+                                        <Link
+                                                  onlyActiveOnIndex={false}
+                                                  style={Object {}}
+                                                  to="/posts/5"
+                                        >
+                                                  Hello, world!
+                                        </Link>
+                              </p>
+                              <ButtonEditPost
+                                        id={undefined}
+                              />
+                              <hr />
+                              <MetaData
+                                        author="Lost autor"
+                                        createdAt="Today at 5:51 PM"
+                                        updatedAt="Today at 5:51 PM"
                               />
                     </GridColumn>
           </GridRow>
