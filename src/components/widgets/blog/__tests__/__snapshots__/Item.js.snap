@@ -45,8 +45,8 @@ ShallowWrapper {
             <hr />
             <MetaData
                 author="Lost autor"
-                createdAt="Today at 5:51 PM"
-                updatedAt="Today at 5:51 PM"
+                createdAt="2017-04-14"
+                updatedAt="2017-04-15"
             />
         </GridColumn>
     </GridRow>
@@ -92,8 +92,8 @@ ShallowWrapper {
                   <hr />
                   <MetaData
                         author="Lost autor"
-                        createdAt="Today at 5:51 PM"
-                        updatedAt="Today at 5:51 PM"
+                        createdAt="2017-04-14"
+                        updatedAt="2017-04-15"
                   />
             </GridColumn>
       </GridRow>
@@ -119,6 +119,10 @@ ShallowWrapper {
                           "src": "/dist/images/default.jpg",
                         },
                         "link": "/posts/5",
+                        "meta": Object {
+                          "createdAt": "2017-04-14",
+                          "updatedAt": "2017-04-15",
+                        },
                       }
         }
 />,
@@ -138,6 +142,10 @@ ShallowWrapper {
               "src": "/dist/images/default.jpg",
             },
             "link": "/posts/5",
+            "meta": Object {
+              "createdAt": "2017-04-14",
+              "updatedAt": "2017-04-15",
+            },
           },
         },
         "refs": Object {},
@@ -197,8 +205,8 @@ ShallowWrapper {
                               <hr />
                               <MetaData
                                         author="Lost autor"
-                                        createdAt="Today at 5:51 PM"
-                                        updatedAt="Today at 5:51 PM"
+                                        createdAt="2017-04-14"
+                                        updatedAt="2017-04-15"
                               />
                     </GridColumn>
           </GridRow>
@@ -244,8 +252,8 @@ ShallowWrapper {
                               <hr />
                               <MetaData
                                         author="Lost autor"
-                                        createdAt="Today at 5:51 PM"
-                                        updatedAt="Today at 5:51 PM"
+                                        createdAt="2017-04-14"
+                                        updatedAt="2017-04-15"
                               />
                     </GridColumn>
           </GridRow>
@@ -275,6 +283,10 @@ ShallowWrapper {
               "src": "/dist/images/default.jpg",
             },
             "link": "/posts/5",
+            "meta": Object {
+              "createdAt": "2017-04-14",
+              "updatedAt": "2017-04-15",
+            },
           }
     }
 />,

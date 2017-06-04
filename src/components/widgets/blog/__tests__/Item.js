@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
+import sinon from 'sinon';
 
 import Link from 'components/elements/Link';
 
@@ -31,6 +32,10 @@ describe('Item', () => {
         image: {
           alt: 'Hello, World',
           src: '/dist/images/default.jpg'
+        },
+        meta: {
+          createdAt: '2017-04-14',
+          updatedAt: '2017-04-15'
         }
       };
 
