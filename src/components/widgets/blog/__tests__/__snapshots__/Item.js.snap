@@ -126,7 +126,7 @@ ShallowWrapper {
                       }
         }
 />,
-      "_debugID": 34,
+      "_debugID": 36,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": StatelessComponent {
@@ -161,7 +161,7 @@ ShallowWrapper {
           "validateCallback": [Function],
         },
       },
-      "_mountOrder": 2,
+      "_mountOrder": 3,
       "_pendingCallbacks": null,
       "_pendingElement": null,
       "_pendingForceUpdate": false,
@@ -214,7 +214,7 @@ ShallowWrapper {
                     horizontal={true}
           />
 </Grid>,
-        "_debugID": 35,
+        "_debugID": 37,
         "_renderedOutput": <Grid>
           <GridRow>
                     <GridColumn
