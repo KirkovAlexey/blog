@@ -1,8 +1,8 @@
 import { parse } from 'qs';
 
 import { compact } from 'lodash/array';
-
 import { map } from 'lodash/collection';
+import { get } from 'lodash/object';
 
 export default function(store, state) {
   const { location, params, routes } = state;
